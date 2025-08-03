@@ -1,7 +1,7 @@
 describe("HelloWorld", () => {
   it("Test dummy", () => {
-    const a = 1;
-    const b = 2;
-    expect(a + b).toBe(3);
+    const firstConst = 1;
+    const secondConst = 2;
+    expect(firstConst + secondConst).toBe(3);
   });
 });
