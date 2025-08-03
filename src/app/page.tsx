@@ -1,5 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./page.module.css";
+import Button from "@mui/material/Button";
+import { styled } from "@mui/material/styles";
+import { toast } from "sonner";
+
+const StyledButton = styled(Button)({
+  backgroundColor: "#ff0000",
+  color: "#fff",
+  "&:hover": {
+    backgroundColor: "#06080aff",
+  },
+});
 
 export default function Home() {
   return (
@@ -44,6 +57,13 @@ export default function Home() {
           >
             Read our docs
           </a>
+          <StyledButton
+            variant="contained"
+            color="primary"
+            onClick={() => toast.success("My first toast")}
+          >
+            Toast
+          </StyledButton>
         </div>
       </main>
       <footer className={styles.footer}>
