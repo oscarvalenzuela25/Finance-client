@@ -6,10 +6,11 @@ import ReactQueryProvider from "@/config/ReactQueryProvider";
 import I18nProvider from "@/config/I18nProvider";
 import { publicSans } from "@/theme/fonts";
 import "./globals.css";
+import MainLayout from "@/layouts/MainLayout/MainLayout";
 
 export const metadata: Metadata = {
-  title: "Finance App",
-  description: "My Per",
+  title: "Overview",
+  description: "My Personal Finance App",
 };
 
 type Props = PropsWithChildren;
@@ -22,7 +23,7 @@ const RootLayout: FC<Props> = ({ children }) => {
           <ReactQueryProvider>
             <MuiProvider>
               <Toaster position="bottom-right" richColors closeButton />
-              {children}
+              <MainLayout>{children}</MainLayout>
             </MuiProvider>
           </ReactQueryProvider>
         </I18nProvider>
