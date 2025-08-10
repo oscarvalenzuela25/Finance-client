@@ -1,5 +1,4 @@
 "use client";
-
 import {
   BodyContainer,
   BodyLeftContainer,
@@ -15,7 +14,8 @@ export default function Home() {
       <Title variant="textPreset1Bold" color="grey900">
         Overview
       </Title>
-      <CardMoneyContainer size={{ xs: 12 }}></CardMoneyContainer>
+      <CardMoneyContainer size={{ xs: 12 }}>
+      </CardMoneyContainer>
       <BodyContainer size={{ xs: 12 }}>
         <BodyLeftContainer size={{ xs: 12, md: 6 }}></BodyLeftContainer>
         <BodyRightContainer size={{ xs: 12, md: 6 }}></BodyRightContainer>
