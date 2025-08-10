@@ -177,6 +177,11 @@ export const darkPalette: PaletteOptions = {
     dark: "rgb(152, 86, 58)",
     contrastText: "#fff",
   },
+  action: {
+    disabled: "#A0A0A0",
+    disabledBackground: "#404040",
+    disabledOpacity: 1,
+  },
 };
 
 export const lightPalette: PaletteOptions = {
@@ -306,6 +311,11 @@ export const lightPalette: PaletteOptions = {
     light: "rgb(203, 137, 109)",
     dark: "rgb(152, 86, 58)",
     contrastText: "#fff",
+  },
+  action: {
+    disabled: "#A0A0A0",
+    disabledBackground: "#404040",
+    disabledOpacity: 1,
   },
 };
 
