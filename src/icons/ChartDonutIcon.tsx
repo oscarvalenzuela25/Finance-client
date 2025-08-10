@@ -2,10 +2,9 @@
 import React, { FC } from 'react';
 import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
 
-
 type Props = SvgIconProps & { disabled?: boolean };
 
-const ChartDonut: FC<Props> = ({ disabled, sx, ...props }) => (
+const ChartDonutIcon: FC<Props> = ({ disabled, sx, ...props }) => (
     <SvgIcon
         {...props}
         viewBox="0 0 24 24"
@@ -18,4 +17,4 @@ const ChartDonut: FC<Props> = ({ disabled, sx, ...props }) => (
     </SvgIcon>
 );
 
-export default ChartDonut;
+export default ChartDonutIcon;

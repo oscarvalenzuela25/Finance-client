@@ -4,7 +4,7 @@ import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
 
 type Props = SvgIconProps & { disabled?: boolean };
 
-const Filter: FC<Props> = ({ disabled, sx, ...props }) => (
+const FilterIcon: FC<Props> = ({ disabled, sx, ...props }) => (
     <SvgIcon
         {...props}
         viewBox="0 0 24 24"
@@ -17,4 +17,4 @@ const Filter: FC<Props> = ({ disabled, sx, ...props }) => (
     </SvgIcon>
 );
 
-export default Filter;
+export default FilterIcon;

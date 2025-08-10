@@ -2,10 +2,9 @@
 import React, { FC } from 'react';
 import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
 
-
 type Props = SvgIconProps & { disabled?: boolean };
 
-const CaretUp: FC<Props> = ({ disabled, sx, ...props }) => (
+const CaretUpIcon: FC<Props> = ({ disabled, sx, ...props }) => (
     <SvgIcon
         {...props}
         viewBox="0 0 24 24"
@@ -19,4 +18,4 @@ const CaretUp: FC<Props> = ({ disabled, sx, ...props }) => (
 
 );
 
-export default CaretUp;
+export default CaretUpIcon;

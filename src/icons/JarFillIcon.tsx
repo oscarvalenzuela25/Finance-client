@@ -4,7 +4,7 @@ import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
 
 type Props = SvgIconProps & { disabled?: boolean };
 
-const JarFill: FC<Props> = ({ disabled, sx, ...props }) => (
+const JarFillIcon: FC<Props> = ({ disabled, sx, ...props }) => (
     <SvgIcon
         {...props}
         viewBox="0 0 24 24"
@@ -17,4 +17,4 @@ const JarFill: FC<Props> = ({ disabled, sx, ...props }) => (
     </SvgIcon>
 );
 
-export default JarFill;
+export default JarFillIcon;

@@ -4,7 +4,7 @@ import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
 
 type Props = SvgIconProps & { disabled?: boolean };
 
-const CaretRight: FC<Props> = ({ disabled, sx, ...props }) => (
+const CaretRightIcon: FC<Props> = ({ disabled, sx, ...props }) => (
   <SvgIcon
     {...props}
     viewBox="0 0 24 24"
@@ -17,4 +17,4 @@ const CaretRight: FC<Props> = ({ disabled, sx, ...props }) => (
   </SvgIcon>
 );
 
-export default CaretRight;
+export default CaretRightIcon;
