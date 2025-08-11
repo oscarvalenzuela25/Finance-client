@@ -1,20 +1,20 @@
-"use client"
-import React, { FC } from 'react';
-import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
+"use client";
+import React, { FC } from "react";
+import SvgIcon, { SvgIconProps } from "@mui/material/SvgIcon";
 
 type Props = SvgIconProps & { disabled?: boolean };
 
 const CaretDownIcon: FC<Props> = ({ disabled, sx, ...props }) => (
-    <SvgIcon
-        {...props}
-        viewBox="0 0 24 24"
-        sx={{
-            ...sx,
-            ...(disabled ? { color: 'disabled.main' } : {}),
-        }}
-    >
-        <path d="m7 10 5 5 5-5z"></path>
-    </SvgIcon>
+  <SvgIcon
+    {...props}
+    viewBox="0 0 24 24"
+    sx={{
+      ...sx,
+      ...(disabled ? { color: "disabled.main" } : {}),
+    }}
+  >
+    <path d="m7 10 5 5 5-5z"></path>
+  </SvgIcon>
 );
 
 export default CaretDownIcon;
