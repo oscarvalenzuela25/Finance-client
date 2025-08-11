@@ -32,11 +32,28 @@ export const StyledMenuItemContainerLaptop = styled("div")<{
   };
 });
 
-export const StyledTextLaptop = styled(Typography)<{ selected?: boolean }>(
-  ({ theme, selected = false }) => ({
-    color: selected ? theme.palette.grey900.main : "inherit",
-  })
-);
+export const StyledTextLaptop = styled(Typography, {
+  shouldForwardProp: (prop) => prop !== "isMinimized" && prop !== "selected",
+})<{
+  selected?: boolean;
+  isMinimized?: boolean;
+}>(({ theme, selected = false, isMinimized = false }) => ({
+  color: selected ? theme.palette.grey900.main : "inherit",
+  whiteSpace: "nowrap",
+  overflow: "hidden",
+
+  // Estado visual
+  opacity: isMinimized ? 0 : 1,
+  transform: isMinimized ? "translateX(-4px)" : "translateX(0)",
+
+  // Animaciones
+  transition: "all 200ms ease",
+  // Espera a que termine la animación de width (300ms) antes de mostrar el texto
+  transitionDelay: isMinimized ? "0ms" : "300ms",
+
+  // Evita clicks/tab en modo minimizado
+  pointerEvents: isMinimized ? "none" : "auto",
+}));
 
 export const StyledMenuItemContainerTablet = styled("div")<{
   selected?: boolean;
@@ -48,6 +65,7 @@ export const StyledMenuItemContainerTablet = styled("div")<{
       flexDirection: "column",
       gap: "4px",
       alignItems: "center",
+      textAlign: "center",
       padding: "8px 17.5px 12px 17.5px",
       borderRadius: "8px 8px 0px 0px",
       backgroundColor: theme.palette.beige100.main,
@@ -60,6 +78,7 @@ export const StyledMenuItemContainerTablet = styled("div")<{
     flexDirection: "column",
     gap: "4px",
     alignItems: "center",
+    textAlign: "center",
     padding: "8px 17.5px 12px 17.5px",
     borderRadius: "8px 8px 0px 0px",
     color: theme.palette.grey300.main,

@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react";
+import React, { CSSProperties, FC, ReactNode } from "react";
 import {
   StyledMenuItemContainerLaptop,
   StyledMenuItemContainerMobile,
@@ -13,6 +13,7 @@ type Props = {
   selected?: boolean;
   icon: ReactNode;
   isMinimized?: boolean;
+  sx?: CSSProperties;
   onClick?: () => void;
 };
 
@@ -21,13 +22,18 @@ const SidebarMenuItem: FC<Props> = ({
   selected,
   icon,
   isMinimized,
+  sx = {},
   onClick,
 }) => {
   const currentBreakpoint = useBreakpoint();
 
   if (currentBreakpoint === "mobile") {
     return (
-      <StyledMenuItemContainerMobile selected={selected} onClick={onClick}>
+      <StyledMenuItemContainerMobile
+        selected={selected}
+        onClick={onClick}
+        sx={{ ...sx }}
+      >
         {icon}
       </StyledMenuItemContainerMobile>
     );
@@ -35,7 +41,11 @@ const SidebarMenuItem: FC<Props> = ({
 
   if (currentBreakpoint === "tablet") {
     return (
-      <StyledMenuItemContainerTablet selected={selected} onClick={onClick}>
+      <StyledMenuItemContainerTablet
+        selected={selected}
+        onClick={onClick}
+        sx={{ ...sx }}
+      >
         {icon}
         <StyledTextTablet selected={selected} variant="textPreset5Bold">
           {label}
@@ -45,13 +55,19 @@ const SidebarMenuItem: FC<Props> = ({
   }
 
   return (
-    <StyledMenuItemContainerLaptop selected={selected} onClick={onClick}>
+    <StyledMenuItemContainerLaptop
+      selected={selected}
+      onClick={onClick}
+      sx={{ ...sx }}
+    >
       {icon}
-      {!isMinimized && (
-        <StyledTextLaptop selected={selected} variant="textPreset3Bold">
-          {label}
-        </StyledTextLaptop>
-      )}
+      <StyledTextLaptop
+        selected={selected}
+        variant="textPreset3Bold"
+        isMinimized={isMinimized}
+      >
+        {label}
+      </StyledTextLaptop>
     </StyledMenuItemContainerLaptop>
   );
 };
