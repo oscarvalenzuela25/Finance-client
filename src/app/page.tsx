@@ -8,7 +8,7 @@ import {
   Title,
 } from "./styles";
 
-export default function Home() {
+const Home = () => {
   return (
     <RootContainer>
       <Title variant="textPreset1Bold" color="grey900">
@@ -21,4 +21,6 @@ export default function Home() {
       </BodyContainer>
     </RootContainer>
   );
-}
+};
+
+export default Home;
