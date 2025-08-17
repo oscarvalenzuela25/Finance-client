@@ -71,16 +71,16 @@ const useServices = () => {
   ];
 
   const serviceImgs: ServiceImgs = {
-    entertainment: entertainment,
-    bills: bills,
-    groceries: groceries,
-    diningOut: diningOut,
-    transportation: transportation,
-    personalCare: personalCare,
-    education: education,
-    lifestyle: lifestyle,
-    shopping: shopping,
-    general: general,
+    entertainment,
+    bills,
+    groceries,
+    diningOut,
+    transportation,
+    personalCare,
+    education,
+    lifestyle,
+    shopping,
+    general,
   };
 
   return {
