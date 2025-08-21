@@ -8,19 +8,18 @@ import {
   Title,
 } from "./styles";
 
-export default function Home() {
+const Home = () => {
   return (
     <RootContainer>
       <Title>
       </Title>
-      <CardMoneyContainer >
-      </CardMoneyContainer>
-      <BodyContainer >
-        <BodyLeftContainer>
-        </BodyLeftContainer>
-        <BodyRightContainer>
-        </BodyRightContainer>
+      <CardMoneyContainer size={{ xs: 12 }}></CardMoneyContainer>
+      <BodyContainer size={{ xs: 12 }}>
+        <BodyLeftContainer size={{ xs: 12, md: 6 }}></BodyLeftContainer>
+        <BodyRightContainer size={{ xs: 12, md: 6 }}></BodyRightContainer>
       </BodyContainer>
     </RootContainer>
   );
-}
+};
+
+export default Home;

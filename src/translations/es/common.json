@@ -1,1 +1,19 @@
-{}
+{
+  "colors": {
+    "green": "Verde",
+    "yellow": "Amarillo",
+    "cyan": "Cian",
+    "navy": "Azul marino",
+    "red": "Rojo",
+    "purple": "Morado",
+    "turquoise": "Turquesa",
+    "brown": "Marrón",
+    "magenta": "Magenta",
+    "blue": "Azul",
+    "navyGrey": "Gris azulado",
+    "armyGreen": "Verde militar",
+    "pink": "Rosa",
+    "gold": "Dorado",
+    "orange": "Naranja"
+  }
+}
