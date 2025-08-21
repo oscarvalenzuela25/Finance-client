@@ -11,14 +11,15 @@ import {
 export default function Home() {
   return (
     <RootContainer>
-      <Title variant="textPreset1Bold" color="grey900">
-        Overview
+      <Title>
       </Title>
-      <CardMoneyContainer size={{ xs: 12 }}>
+      <CardMoneyContainer >
       </CardMoneyContainer>
-      <BodyContainer size={{ xs: 12 }}>
-        <BodyLeftContainer size={{ xs: 12, md: 6 }}></BodyLeftContainer>
-        <BodyRightContainer size={{ xs: 12, md: 6 }}></BodyRightContainer>
+      <BodyContainer >
+        <BodyLeftContainer>
+        </BodyLeftContainer>
+        <BodyRightContainer>
+        </BodyRightContainer>
       </BodyContainer>
     </RootContainer>
   );
