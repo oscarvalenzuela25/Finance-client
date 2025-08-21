@@ -1,4 +1,4 @@
-import React, { FC, useState, useMemo, useEffect } from 'react';
+import React, { FC, useState } from 'react';
 import {
     StyledPaginationContainer,
     StyledPaginationList,
@@ -23,21 +23,25 @@ export const Paginator: FC<Props> = ({
     const [currentPage, setCurrentPage] = useState(1);
     const totalPages = Math.ceil(totalItems / itemsPerPage);
 
+    // Change page, asegura que no se salga de los límites
     const changePage = (page: number) => {
         const newPage = Math.max(1, Math.min(page, totalPages));
         setCurrentPage(newPage);
         onPageChange(newPage);
     };
 
-    useEffect(() => {
-        if (currentPage > totalPages) {
-            changePage(totalPages);
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [totalPages]);
+    // botones prev y next
+    const goToPrevPage = () => {
+        changePage(currentPage - 1);
+    };
 
-    const paginationRange = useMemo<(number | 'DOTS')[]>(() => {
+    const goToNextPage = () => {
+        changePage(currentPage + 1);
+    };
+
+    const paginationRange = (): (number | 'DOTS')[] => {
         const totalNumbers = siblingCount * 2 + 5;
+
         if (totalNumbers >= totalPages) {
             return Array.from({ length: totalPages }, (_, i) => i + 1);
         };
@@ -54,52 +58,53 @@ export const Paginator: FC<Props> = ({
             // cerca del inicio
             const leftItemCount = 3 + 2 * siblingCount;
             for (let i = 1; i <= leftItemCount; i++) pages.push(i);
-            pages.push('DOTS');
-            pages.push(totalPages);
+            pages.push('DOTS', totalPages);
         } else if (shouldShowLeftDots && !shouldShowRightDots) {
             // cerca del final
-            pages.push(1);
-            pages.push('DOTS');
+            pages.push(1, 'DOTS');
             const rightItemCount = 3 + 2 * siblingCount;
             for (let i = totalPages - rightItemCount + 1; i <= totalPages; i++) pages.push(i);
         } else if (shouldShowLeftDots && shouldShowRightDots) {
             // en medio
-            pages.push(1);
-            pages.push('DOTS');
+            pages.push(1, 'DOTS');
             for (let i = leftSiblingIndex; i <= rightSiblingIndex; i++) pages.push(i);
-            pages.push('DOTS');
-            pages.push(totalPages);
+            pages.push('DOTS', totalPages);
         }
 
         return pages;
-    }, [totalPages, siblingCount, currentPage]);
+    };
+
+    // Maneja el clic en la página
+    const handlePageClick = (page: number) => {
+        changePage(page);
+    };
 
     return (
         <StyledPaginationContainer>
             <StyledPaginationList>
                 <PageButton
-                    onClick={() => changePage(currentPage - 1)}
+                    onClick={goToPrevPage}
                     disabled={currentPage === 1}
                 >
                     Prev
                 </PageButton>
 
-                {paginationRange.map((item, idx) =>
+                {paginationRange().map((item, index) =>
                     item === 'DOTS' ? (
-                        <DotsText key={idx}>...</DotsText>
+                        <DotsText key={index}>...</DotsText>
                     ) : item === currentPage ? (
-                        <ActivePageButton key={idx} onClick={() => changePage(item)}>
+                        <ActivePageButton key={index} onClick={() => handlePageClick(item)}>
                             {item}
                         </ActivePageButton>
                     ) : (
-                        <PageButton key={idx} onClick={() => changePage(item)}>
+                        <PageButton key={index} onClick={() => handlePageClick(item)}>
                             {item}
                         </PageButton>
                     )
                 )}
 
                 <PageButton
-                    onClick={() => changePage(currentPage + 1)}
+                    onClick={goToNextPage}
                     disabled={currentPage === totalPages}>
                     Next
                 </PageButton>

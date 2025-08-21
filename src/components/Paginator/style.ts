@@ -20,7 +20,6 @@ export const StyledPaginationList = styled(Stack)(({ theme }) => ({
     flexDirection: 'row',
     alignItems: 'center',
     gap: theme.spacing(1),
-
 }));
 
 // boton generico
@@ -30,7 +29,7 @@ export const PageButton = styled(Button)(({ theme }) => ({
     fontWeight: 'bold',
     backgroundColor: '#ffffff',
     color: '#000000ff',
-    border: `1px solid #98908B`,
+    border: `1px solid ${theme.palette.grey[500]}`,
     '&:hover': {
         backgroundColor: theme.palette.beige500.main,
         color: 'white',
@@ -39,7 +38,7 @@ export const PageButton = styled(Button)(({ theme }) => ({
     '&.Mui-disabled': {
         backgroundColor: '#f5f5f5',
         color: '#bdbdbd',
-        border: `1px solid #e0e0e0`,
+        border: `1px solid ${theme.palette.grey[300]}`,
         cursor: 'not-allowed',
         pointerEvents: 'auto',
     },
