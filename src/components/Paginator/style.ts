@@ -12,7 +12,6 @@ export const StyledPaginationContainer = styled(Box)(({ theme }) => ({
     left: '41px',
     paddingTop: 'spacing/300',
     marginTop: theme.spacing(2),
-
 }));
 
 // fila de botones
@@ -27,18 +26,18 @@ export const PageButton = styled(Button)(({ theme }) => ({
     minWidth: 36,
     padding: '6px 12px',
     fontWeight: 'bold',
-    backgroundColor: '#ffffff',
-    color: '#000000ff',
-    border: `1px solid ${theme.palette.grey[500]}`,
+    backgroundColor: theme.palette.common.white,
+    color: theme.palette.grey900.main,
+    border: `1px solid ${theme.palette.grey500.main}`,
     '&:hover': {
         backgroundColor: theme.palette.beige500.main,
         color: 'white',
-        cursor: 'pointer',
+        cursor: 'pointer'
     },
     '&.Mui-disabled': {
-        backgroundColor: '#f5f5f5',
-        color: '#bdbdbd',
-        border: `1px solid ${theme.palette.grey[300]}`,
+        backgroundColor: theme.palette.grey300.main,
+        color: theme.palette.grey500.dark,
+        border: `1px solid ${theme.palette.grey300.main}`,
         cursor: 'not-allowed',
         pointerEvents: 'auto',
     },
@@ -47,17 +46,17 @@ export const PageButton = styled(Button)(({ theme }) => ({
 // boton activo (pagina actual)
 export const ActivePageButton = styled(PageButton)(({ theme }) => ({
     fontWeight: 'bold',
-    backgroundColor: '#201f24',
-    color: '#ffffff',
+    backgroundColor: theme.palette.grey900.main,
+    color: theme.palette.common.white,
     '&:hover': {
         backgroundColor: theme.palette.primary.contrastText,
     },
 }));
 
 // texto de puntos
-export const DotsText = styled(Typography)(() => ({
+export const DotsText = styled(Typography)(({ theme }) => ({
     display: 'inline-block',
     fontSize: '24px',
     paddingTop: '8px', // esto baja los puntos
-    color: '#888',
+    color: theme.palette.grey900.main,
 }));
