@@ -31,7 +31,7 @@ export const PageButton = styled(Button)(({ theme }) => ({
     border: `1px solid ${theme.palette.grey500.main}`,
     '&:hover': {
         backgroundColor: theme.palette.beige500.main,
-        color: 'white',
+        color: theme.palette.common.white,
         cursor: 'pointer'
     },
     '&.Mui-disabled': {
