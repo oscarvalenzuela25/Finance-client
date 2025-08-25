@@ -27,7 +27,7 @@ const Topbar = () => {
           sxText={{ color: theme.palette.common.white }}
         />
       </Button>
-      <Menu anchorEl={anchorEl} open={!!anchorEl} onClose={handleClose}>
+      <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
         <MenuItem onClick={handleClose}>
           <MeetingRoomIcon />
           Logout
