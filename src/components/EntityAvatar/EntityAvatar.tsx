@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { CSSProperties, FC } from "react";
 import { StyledEntityAvatarContainer, StyledEntityAvatarText } from "./styles";
 import { Avatar, useTheme } from "@mui/material";
 import useServices, { ServiceImgs } from "@/hooks/useServices";
@@ -9,7 +9,8 @@ type Props = {
   name: string;
   category?: keyof ServiceImgs;
   imgUrl?: string;
-  imgPosition: "left" | "right";
+  imgPosition?: "left" | "right";
+  sxText?: CSSProperties;
 };
 
 const EntityAvatar: FC<Props> = ({
@@ -18,6 +19,7 @@ const EntityAvatar: FC<Props> = ({
   category,
   imgUrl,
   imgPosition = "left",
+  sxText = {},
 }) => {
   const theme = useTheme();
   const { serviceImgs } = useServices();
@@ -56,7 +58,7 @@ const EntityAvatar: FC<Props> = ({
   return (
     <StyledEntityAvatarContainer>
       {imgPosition === "left" && avatar}
-      <StyledEntityAvatarText>{name}</StyledEntityAvatarText>
+      <StyledEntityAvatarText sx={{ ...sxText }}>{name}</StyledEntityAvatarText>
       {imgPosition === "right" && avatar}
     </StyledEntityAvatarContainer>
   );
