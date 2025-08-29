@@ -89,15 +89,15 @@ export const Paginator: FC<Props> = ({
                     Prev
                 </PageButton>
 
-                {paginationRange().map((item, i) =>
+                {paginationRange().map((item, index) =>
                     item === 'DOTS' ? (
-                        <DotsText key={`dots-${i}`}>...</DotsText>
+                        <DotsText key={index}>...</DotsText>
                     ) : item === currentPage ? (
-                        <ActivePageButton key={item} onClick={() => handlePageClick(item)}>
+                        <ActivePageButton key={index} onClick={() => handlePageClick(item)}>
                             {item}
                         </ActivePageButton>
                     ) : (
-                        <PageButton key={item} onClick={() => handlePageClick(item)}>
+                        <PageButton key={index} onClick={() => handlePageClick(item)}>
                             {item}
                         </PageButton>
                     )
