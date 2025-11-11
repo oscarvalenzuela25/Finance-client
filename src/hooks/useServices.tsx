@@ -68,6 +68,10 @@ const useServices = () => {
       label: "General",
       value: "general",
     },
+    {
+      label: "Salary",
+      value: "salary",
+    },
   ];
 
   const serviceImgs: ServiceImgs = {

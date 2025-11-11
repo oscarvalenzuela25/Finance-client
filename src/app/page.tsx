@@ -8,7 +8,7 @@ import {
   Title,
 } from "./styles";
 
-const Home = () => {
+const OverviewPage = () => {
   return (
     <RootContainer>
       <Title variant="textPreset1Bold" color="grey900">
@@ -23,4 +23,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default OverviewPage;
