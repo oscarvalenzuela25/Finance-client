@@ -3,7 +3,6 @@ import ArrowDownUpIcon from "@/icons/ArrowDownUpIcon";
 import ChartDonutIcon from "@/icons/ChartDonutIcon";
 import HouseIcon from "@/icons/HouseIcon";
 import JarFillIcon from "@/icons/JarFillIcon";
-import ReceiptIcon from "@/icons/ReceiptIcon";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -66,19 +65,6 @@ const useMainLayout = () => {
       isMinimized,
       selected: pathname === "/pots",
       onClick: () => router.push("/pots"),
-    },
-    {
-      label: "Recurring bills",
-      icon: (
-        <ReceiptIcon
-          sx={{
-            color: pathname === "/recurring-bills" ? "green.main" : "inherit",
-          }}
-        />
-      ),
-      isMinimized,
-      selected: pathname === "/recurring-bills",
-      onClick: () => router.push("/recurring-bills"),
     },
   ];
   return { menuItems, isMinimized, toggleSetIsMinimized };

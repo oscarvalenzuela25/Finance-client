@@ -7,7 +7,7 @@ import {
   renderHook as renderHookLib,
 } from "@testing-library/react";
 import axios from "axios";
-import theme from "@/theme";
+import { darkTheme } from "@/theme/theme";
 
 export const i18nMocked = () => {
   vi.mock("react-i18next", () => ({
@@ -35,7 +35,7 @@ const queryClient = new QueryClient({
 const wrapperApp = ({ children }: PropsWithChildren) => (
   <QueryClientProvider client={queryClient}>
     <StyledEngineProvider injectFirst enableCssLayer>
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      <ThemeProvider theme={darkTheme}>{children}</ThemeProvider>
     </StyledEngineProvider>
   </QueryClientProvider>
 );
