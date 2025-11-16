@@ -3,7 +3,7 @@
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { useQuery } from "@tanstack/react-query";
 import { FC, PropsWithChildren } from "react";
-import axiosInstance from "./axiosConfig";
+import { axiosV1Instance } from "./axiosConfig";
 import { darkPalette, lightPalette } from "@/theme/palette";
 import typography from "./../theme/typography";
 import breakpoints from "./../theme/breakpoints";
@@ -58,7 +58,7 @@ const MuiProvider: FC<Props> = ({ children }) => {
   } = useQuery({
     queryKey: ["fetchPalettes"],
     queryFn: async () => {
-      const { data } = await axiosInstance.get("/finance/palettes");
+      const { data } = await axiosV1Instance.get("/finance/palettes");
       return data;
     },
     staleTime: Infinity,

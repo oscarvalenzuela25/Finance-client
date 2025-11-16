@@ -1,4 +1,14 @@
 {
+  "configurations": {
+    "minimizeMenu": "Minimizar menú",
+    "logout": "Cerrar sesión"
+  },
+  "sections": {
+    "overview": "Resumen",
+    "transactions": "Transacciones",
+    "budgets": "Presupuestos",
+    "pots": "Fondos"
+  },
   "colors": {
     "green": "Verde",
     "yellow": "Amarillo",
@@ -15,5 +25,9 @@
     "pink": "Rosa",
     "gold": "Dorado",
     "orange": "Naranja"
+  },
+  "languages": {
+    "english": "Inglés",
+    "spanish": "Español"
   }
 }

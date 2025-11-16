@@ -1,6 +1,9 @@
 import i18n from "i18next";
 import esCommon from "./es/common.json";
+import esOverview from "./es/overview.json";
+
 import enCommon from "./en/common.json";
+import enOverview from "./en/overview.json";
 import { Language } from "@/types/globals";
 
 let initialized = false;
@@ -9,8 +12,8 @@ export const initI18nCore = (lng?: Language) => {
   if (!initialized) {
     i18n.init({
       resources: {
-        es: { common: esCommon },
-        en: { common: enCommon },
+        es: { common: esCommon, overview: esOverview },
+        en: { common: enCommon, overview: enOverview },
       },
       fallbackLng: "es",
       supportedLngs: ["es", "en"],
