@@ -26,7 +26,7 @@ export const MuiDarkSelect: Components<Theme>["MuiSelect"] = {
 
       // 🟢 Texto normal
       "& .MuiSelect-select": {
-        color: theme.palette.grey900.main,
+        color: theme.palette.grey900.contrastText,
       },
 
       // 🔴 Disabled → todo beige100.dark

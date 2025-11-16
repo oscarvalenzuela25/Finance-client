@@ -17,8 +17,6 @@ export const Title = styled(Typography)({
 
 export const CardMoneyContainer = styled(Grid)({
   display: "flex",
-  flexWrap: "wrap",
-  gap: "24px",
   marginBottom: "32px",
 });
 

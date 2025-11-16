@@ -11,8 +11,10 @@ import {
 import SidebarMenuItem from "../SidebarMenuItem";
 import ArrowFatLeftIcon from "@/icons/ArrowFatLeftIcon";
 import useMainLayout from "../../hooks/useMainLayout";
+import { useTranslation } from "react-i18next";
 
 const Sidebar = () => {
+  const { t } = useTranslation();
   const { menuItems, isMinimized, toggleSetIsMinimized } = useMainLayout();
 
   return (
@@ -40,7 +42,7 @@ const Sidebar = () => {
       </StyledContainerMenuItems>
 
       <SidebarMenuItem
-        label="Minimize Menu"
+        label={t("common:configurations.minimizeMenu")}
         icon={<ArrowFatLeftIcon />}
         isMinimized={isMinimized}
         onClick={toggleSetIsMinimized}

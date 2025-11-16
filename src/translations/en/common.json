@@ -1,4 +1,14 @@
 {
+  "configurations": {
+    "minimizeMenu": "Minimize menu",
+    "logout": "Logout"
+  },
+  "sections": {
+    "overview": "Overview",
+    "transactions": "Transactions",
+    "budgets": "Budgets",
+    "pots": "Pots"
+  },
   "colors": {
     "green": "Green",
     "yellow": "Yellow",
@@ -15,5 +25,9 @@
     "pink": "Pink",
     "gold": "Gold",
     "orange": "Orange"
+  },
+  "languages": {
+    "english": "English",
+    "spanish": "Spanish"
   }
 }

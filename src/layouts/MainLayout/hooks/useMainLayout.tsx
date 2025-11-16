@@ -5,8 +5,10 @@ import HouseIcon from "@/icons/HouseIcon";
 import JarFillIcon from "@/icons/JarFillIcon";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const useMainLayout = () => {
+  const { t } = useTranslation();
   const router = useRouter();
   const pathname = usePathname();
   const [isMinimized, setIsMinimized] = useState(false);
@@ -17,7 +19,7 @@ const useMainLayout = () => {
 
   const menuItems = [
     {
-      label: "Overview",
+      label: t("common:sections.overview"),
       icon: (
         <HouseIcon
           sx={{ color: pathname === "/" ? "green.main" : "inherit" }}
@@ -28,7 +30,7 @@ const useMainLayout = () => {
       onClick: () => router.push("/"),
     },
     {
-      label: "Transactions",
+      label: t("common:sections.transactions"),
       icon: (
         <ArrowDownUpIcon
           sx={{
@@ -41,7 +43,7 @@ const useMainLayout = () => {
       onClick: () => router.push("/transactions"),
     },
     {
-      label: "Budgets",
+      label: t("common:sections.budgets"),
       icon: (
         <ChartDonutIcon
           sx={{
@@ -54,7 +56,7 @@ const useMainLayout = () => {
       onClick: () => router.push("/budgets"),
     },
     {
-      label: "Pots",
+      label: t("common:sections.pots"),
       icon: (
         <JarFillIcon
           sx={{
