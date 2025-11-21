@@ -3,13 +3,13 @@ import { styled } from "@mui/material/styles";
 export const MainContainer = styled("div")(({ theme }) => ({
   background: theme.palette.beige100.main,
   width: "100dvw",
-  height: "100dvh",
+  minHeight: "100dvh",
   display: "flex",
 }));
 
 export const RightContent = styled("div")({
   width: "100%",
-  height: "100dvh",
+  minHeight: "100dvh",
   display: "flex",
   flexDirection: "column",
 });

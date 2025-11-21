@@ -9,6 +9,7 @@ import {
   RootContainer,
   Title,
 } from "./styles";
+import PotsOverview from "./components/PotsOverview";
 
 const OverviewPage = () => {
   const { t } = useTranslation();
@@ -21,8 +22,10 @@ const OverviewPage = () => {
         <Overview />
       </CardMoneyContainer>
       <BodyContainer size={{ xs: 12 }}>
-        <BodyLeftContainer size={{ xs: 12, md: 6 }}></BodyLeftContainer>
-        <BodyRightContainer size={{ xs: 12, md: 6 }}></BodyRightContainer>
+        <BodyLeftContainer>
+          <PotsOverview />
+        </BodyLeftContainer>
+        <BodyRightContainer></BodyRightContainer>
       </BodyContainer>
     </RootContainer>
   );

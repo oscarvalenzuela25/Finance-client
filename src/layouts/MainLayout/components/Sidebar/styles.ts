@@ -7,7 +7,7 @@ export const StyledContainer = styled("div")<{ isMinimized?: boolean }>(
     overflow: "hidden",
     width: isMinimized ? 100 : 300,
     minWidth: isMinimized ? 100 : 300,
-    height: "100dvh",
+    minHeight: "100dvh",
     padding: isMinimized ? "40px 12px 24px 0px" : "40px 36px 24px 0px",
     transition: "width 300ms ease, min-width 300ms ease, padding 300ms ease",
     background: theme.palette.grey900.main,

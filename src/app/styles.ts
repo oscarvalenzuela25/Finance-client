@@ -23,16 +23,29 @@ export const CardMoneyContainer = styled(Grid)({
 export const BodyContainer = styled(Grid)({
   display: "flex",
   gap: "24px",
+  flexWrap: "wrap",
 });
 
-export const BodyLeftContainer = styled(Grid)({
+export const BodyLeftContainer = styled(Grid)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   gap: "24px",
-});
+  [theme.breakpoints.up("laptop")]: {
+    width: "calc(58.49% - 12px)",
+  },
+  [theme.breakpoints.down("laptop")]: {
+    width: "100%",
+  },
+}));
 
-export const BodyRightContainer = styled(Grid)({
+export const BodyRightContainer = styled(Grid)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   gap: "24px",
-});
+  [theme.breakpoints.up("laptop")]: {
+    width: "calc(41.51% - 12px)",
+  },
+  [theme.breakpoints.down("laptop")]: {
+    width: "100%",
+  },
+}));
