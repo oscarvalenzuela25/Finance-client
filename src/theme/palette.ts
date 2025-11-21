@@ -345,4 +345,4 @@ export const lightPalette: PaletteOptions = {
 //     contrastText: c.contrastText,
 //   };
 // }
-// console.log(JSON.stringify(out, null, 2));
+// console.info(JSON.stringify(out, null, 2));

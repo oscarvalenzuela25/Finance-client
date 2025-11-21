@@ -15,7 +15,7 @@ const breakpoints = {
   values: {
     mobile: 375,
     tablet: 768,
-    laptop: 1140,
+    laptop: 1440,
     xs: 0,
     sm: 600,
     md: 900,
