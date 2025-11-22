@@ -20,6 +20,7 @@ export type ServiceImgs = {
   lifestyle: { src: string };
   shopping: { src: string };
   general: { src: string };
+  salary: { src: string };
 };
 
 const useServices = () => {
@@ -85,6 +86,7 @@ const useServices = () => {
     lifestyle,
     shopping,
     general,
+    salary: general,
   };
 
   return {

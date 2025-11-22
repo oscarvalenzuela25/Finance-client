@@ -1,7 +1,7 @@
 import { axiosV1Instance } from "@/config/axiosConfig";
 import { PotApiResponse } from "@/types/globals";
 
-export const getOverviewPots = async (): Promise<PotApiResponse> => {
+export const getPotsOverview = async (): Promise<PotApiResponse> => {
   const { data } = await axiosV1Instance.get("/finance/pots", {
     params: {
       limit: 4,

@@ -4,6 +4,7 @@ import { useFetchOverviewData } from "./infrastructure/useServices";
 import { StyledCardContainer, StyledContainerRoot } from "./styles";
 import { CircularProgress, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { formatMoney } from "@/common/utils";
 
 const Overview: FC = () => {
   const { t } = useTranslation();
@@ -45,7 +46,7 @@ const Overview: FC = () => {
               variant="textPreset1Bold"
               color={card.type === "black" ? "white" : "grey900"}
             >
-              ${card.amount}
+              ${formatMoney(card.amount)}
             </Typography>
           )}
         </StyledCardContainer>

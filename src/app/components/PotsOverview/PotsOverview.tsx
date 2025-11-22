@@ -16,12 +16,12 @@ import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { useRouter } from "next/navigation";
 import PotsOverviewImg from "../../../assets/imgs/PotsOverview.svg";
 import Image from "next/image";
-import { useGetOverviewPots } from "./infrastructure/useServices";
+import { useGetPotsOverview } from "./infrastructure/useServices";
 
 const PotsOverview = () => {
   const { t } = useTranslation();
   const router = useRouter();
-  const { data: pots, isLoading: potsIsLoading } = useGetOverviewPots();
+  const { data: pots, isLoading: potsIsLoading } = useGetPotsOverview();
 
   return (
     <StyledContainerRoot>
