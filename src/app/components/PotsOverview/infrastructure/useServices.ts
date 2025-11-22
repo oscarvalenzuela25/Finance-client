@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import { getOverviewPots } from "./services";
+import { getPotsOverview } from "./services";
 
-export const useGetOverviewPots = () =>
+export const useGetPotsOverview = () =>
   useQuery({
-    queryKey: ["overviewPots"],
-    queryFn: getOverviewPots,
+    queryKey: ["potsOverview"],
+    queryFn: getPotsOverview,
   });

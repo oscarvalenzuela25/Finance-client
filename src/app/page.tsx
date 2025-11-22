@@ -10,6 +10,7 @@ import {
   Title,
 } from "./styles";
 import PotsOverview from "./components/PotsOverview";
+import TransactionsOverview from "./components/TransactionsOverview";
 
 const OverviewPage = () => {
   const { t } = useTranslation();
@@ -24,6 +25,7 @@ const OverviewPage = () => {
       <BodyContainer size={{ xs: 12 }}>
         <BodyLeftContainer>
           <PotsOverview />
+          <TransactionsOverview />
         </BodyLeftContainer>
         <BodyRightContainer></BodyRightContainer>
       </BodyContainer>
