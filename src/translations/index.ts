@@ -3,11 +3,13 @@ import esCommon from "./es/common.json";
 import esOverview from "./es/overview.json";
 import esPots from "./es/pots.json";
 import esTransactions from "./es/transactions.json";
+import esBudgets from "./es/budgets.json";
 
 import enCommon from "./en/common.json";
 import enOverview from "./en/overview.json";
 import enPots from "./en/pots.json";
 import enTransactions from "./en/transactions.json";
+import enBudgets from "./en/budgets.json";
 
 import { Language } from "@/types/globals";
 
@@ -22,12 +24,14 @@ export const initI18nCore = (lng?: Language) => {
           overview: esOverview,
           pots: esPots,
           transactions: esTransactions,
+          budgets: esBudgets,
         },
         en: {
           common: enCommon,
           overview: enOverview,
           pots: enPots,
           transactions: enTransactions,
+          budgets: enBudgets,
         },
       },
       fallbackLng: "es",
