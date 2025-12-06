@@ -11,6 +11,7 @@ import {
 } from "./styles";
 import PotsOverview from "./components/PotsOverview";
 import TransactionsOverview from "./components/TransactionsOverview";
+import BudgetsOverview from "./components/BudgetsOverview";
 
 const OverviewPage = () => {
   const { t } = useTranslation();
@@ -27,7 +28,9 @@ const OverviewPage = () => {
           <PotsOverview />
           <TransactionsOverview />
         </BodyLeftContainer>
-        <BodyRightContainer></BodyRightContainer>
+        <BodyRightContainer>
+          <BudgetsOverview />
+        </BodyRightContainer>
       </BodyContainer>
     </RootContainer>
   );
